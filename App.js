@@ -1,114 +1,104 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+// /*Screen to register the user*/
+// import React from 'react';
+// import { View, ScrollView, KeyboardAvoidingView, Alert } from 'react-native';
+// import Mytextinput from './android/components/Mytextinput';
+// import Mybutton from './android/components/Mybutton';
+ 
+// export default class RegisterUser extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       user_name: '',
+//       user_contact: '',
+//       user_address: '',
+//     };
+//   }
+ 
+//   register_user = () => {
+//     var that = this;
+//     const { user_name } = this.state;
+//     const { user_contact } = this.state;
+//     const { user_address } = this.state;
+//     if (user_name) {
+//       if (user_contact) {
+//         if (user_address) {
+//           realm.write(() => {
+//             var ID =
+//               realm.objects('user_details').sorted('user_id', true).length > 0
+//                 ? realm.objects('user_details').sorted('user_id', true)[0]
+//                     .user_id + 1
+//                 : 1;
+//             realm.create('user_details', {
+//               user_id: ID,
+//               user_name: that.state.user_name,
+//               user_contact: that.state.user_contact,
+//               user_address: that.state.user_address,
+//             });
+//             Alert.alert(
+//               'Success',
+//               'You are registered successfully',
+//               [
+//                 {
+//                   text: 'Ok',
+//                   onPress: () => that.props.navigation.navigate('HomeScreen'),
+//                 },
+//               ],
+//               { cancelable: false }
+//             );
+//           });
+//         } else {
+//           alert('Please fill Address');
+//         }
+//       } else {
+//         alert('Please fill Contact Number');
+//       }
+//     } else {
+//       alert('Please fill Name');
+//     }
+//   };
+ 
+//   render() {
+//     return (
+//       <View style={{ backgroundColor: 'white', flex: 1 }}>
+//         <ScrollView keyboardShouldPersistTaps="handled">
+//           <KeyboardAvoidingView
+//             behavior="padding"
+//             style={{ flex: 1, justifyContent: 'space-between' }}>
+//             <Mytextinput
+//               placeholder="Enter Name"
+//               onChangeText={user_name => this.setState({ user_name })}
+//             />
+//             <Mytextinput
+//               placeholder="Enter Contact No"
+//               onChangeText={user_contact => this.setState({ user_contact })}
+//               maxLength={10}
+//               keyboardType="numeric"
+//             />
+//             <Mytextinput
+//               placeholder="Enter Address"
+//               onChangeText={user_address => this.setState({ user_address })}
+//               maxLength={225}
+//               numberOfLines={5}
+//               multiline={true}
+//               style={{ textAlignVertical: 'top' }}
+//             />
+//             <Mybutton
+//               title="Submit"
+//               customClick={this.register_user.bind(this)}
+//             />
+//           </KeyboardAvoidingView>
+//         </ScrollView>
+//       </View>
+//     );
+//   }
+// }
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import Inputs from './android/components/inputs';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
-
-export default App;
+const App = () => {
+   return (
+      <Inputs />
+   )
+}
+export default App
